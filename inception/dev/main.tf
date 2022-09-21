@@ -8,7 +8,8 @@ resource "random_id" "name" {
 }
 
 module "vpc" {
-  source = "../.."
+  source = "git@github.com:Inesh-Reddy/inception-networking-module.git"
+  //source = "../.."
 
   /* enable_dns_support   = true
   enable_dns_hostnames = true */
