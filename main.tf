@@ -1,5 +1,5 @@
 module "vpc" {
-  source = "git@github.com:Inesh-Reddy/inception-networking-module.git/modules/vpc"
+  source = "git@github.com:Inesh-Reddy/inception-networking-module.git"
   //source = "./modules/vpc"
 
   cidr_block           = var.vpc_cidr_block
@@ -12,7 +12,7 @@ module "vpc" {
 }
 
 module "public_subnets" {
-  source = "git@github.com:Inesh-Reddy/inception-networking-module.git/modules/public-subnets"
+  source = "git@github.com:Inesh-Reddy/inception-networking-module.git"
   //source = "./modules/public-subnets"
 
   vpc_id                  = module.vpc.vpc_id
@@ -29,7 +29,7 @@ module "public_subnets" {
 }
 
 module "nat_gateways" {
-  source = "git@github.com:Inesh-Reddy/inception-networking-module.git/modules/nat-gateways"
+  source = "git@github.com:Inesh-Reddy/inception-networking-module.git"
   //source = "./modules/nat-gateways"
 
   subnet_count = module.public_subnets.subnet_count
@@ -40,7 +40,7 @@ module "nat_gateways" {
 }
 
 module "private_subnets" {
-  source = "git@github.com:Inesh-Reddy/inception-networking-module.git/modules/private-subnets"
+  source = "git@github.com:Inesh-Reddy/inception-networking-module.git"
   //source = "./modules/private-subnets"
 
   vpc_id            = module.vpc.vpc_id
